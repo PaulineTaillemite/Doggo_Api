@@ -1,0 +1,57 @@
+commande pour lancer le serveur : npm run start:dev
+commande pour mettre à jour la db via le serveur : npm run seed
+http://localhost:3000/animals
+http://localhost:3000/persons
+http://localhost:3000/persons/1234
+http://localhost:3000/persons/with-animals
+http://localhost:3000/animals/with-owners
+http://localhost:3000/persons/123/with-animals
+
+
+CRUD ANIMALS
+-------------CRÉER UN ANIMAL (SERVEUR DOIT ÊTRE LANCÉ)
+curl -X POST http://localhost:3000/animals \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "Beagle",
+  "dateOfBirth": "2021-05-15",
+  "species": "Dog",
+  "breed": "Beagle",
+  "color": "White",
+  "weight": 4.5,
+  "ownerId":2002
+}'
+
+-------------MODIFIER
+curl -X PUT http://localhost:3000/animals/1001 \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "Snowball"
+}'
+
+-------------SUPPRIMER
+curl -X DELETE http://localhost:3000/animals/1
+
+CRUD PERSONS
+---------------- CREATE
+
+curl -X POST http://localhost:3000/persons \
+-H "Content-Type: application/json" \
+-d '{
+  "firstName": "Pauline",
+  "lastName": "Taillemite",
+  "email": "john.doe@example.com",
+  "phoneNumber": "123-456-7890"
+}'
+
+
+------------- MODIFIER
+curl -X PUT http://localhost:3000/persons/2001 \
+-H "Content-Type: application/json" \
+-d '{
+  "firstName": "Josiane"
+}'
+
+------------ SUPPRIMER
+curl -X DELETE http://localhost:3000/persons/2001
+
