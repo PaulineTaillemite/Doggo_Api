@@ -1,0 +1,3 @@
+- check why all owners has doublons pets
+- set up the pagination
+- make the create crud
